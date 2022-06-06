@@ -1,66 +1,224 @@
 ## Miscellaneous commands I've been using since for file editing.
 
+Some commands might be repeated, I'm using this repository to store everything I'm using and may use again in the future.
 
-1. sed -e 's/,/\t/g'  --> Change comma separation to TAB
-
-2. column -t filename  -->  Separate a file by columns
-
-3. cut -d$'\t' -f 1-10 NAMEOFFILE.txt > NAMEOFFILE2.txt -->  Cut the first 10 columns of a file 
-
-4. sed '1h;1d;$!H;$!d;G' nameoffile --> makes the last line the header
-
-5. sed -e "s/^M//" filename > newfilename --> remove ^M from files edited on Windows and uploaded to Linux. 
-OBS: To enter ^M, type CTRL-V, then CTRL-M. That is, hold down the CTRL key then press V and M in succession.
-
-6. sed 's/^.....//'  input>output --> remove the first 5 characters from any line in a file
-
-7. sed 's/.$//' --> remove last character from any line in a file
-
-8. sed 's/ /\t/g' input>output  Change space separation to TAB
-
-9.  awk '{print NF}' input>output --> count columns
-
-10. cat HEADERCFILE FILEWITHNOHEADER > output --> Join the header file with the data file, one under the other
-
-11. sort -k1 input > output --> sort file by the 1st column
-
-12. awk '{print $2,$1,$3}' input>output --> Creating a new file with columns 2, 1 and 3 from another file
-
-13. paste input1 input2 > output --> Join two files into a new file just by pasting one next to the other
-
-14. less -S nameoffile --> Open a very large file on linux
-
-15. sed 1d input > output --> cut the first line of a file
-
-16. cut -‐f1 -‐d" " input>output --> cut the first column of a file
-
-17. cut -d " " -f 2- input>output --> cut the first column and create a new file from the second column to the last.
-
-18. awk 'FNR>=1 && FNR<=11' input>output --> Take only the first 11 lines of a file
-
-19. echo "$(tail -n +2 input)" > output --> remove header
-
-20.  nohup ./command_that_will_take_forever_to_complete & --> run a command that will take a while to complete without stopping in a server
-
-21. grep -vwF -f id1.txt id2.txt > id3.txt --> (This file contains the animals that are not in common... that is, animals that have a phenotype)
-
-OBS: print strings that are not common when comparing two different files. the output will be all the different values/animals/sentences between the two files. In the example above, I wanted to know which animals had phenotype and not genotype (the number of animals genotyped was lower). I just wanted to work with phenotyped animals that had a genotype, that is, to exclude individuals without genomic information.
-
-22. join  -1 1 -2 1 <(sort -k1 input1) <(sort -k1 input2) > output --> join files by column
-
-23. chmod u+x nameofexecutable -->  change file permissions
-
-24. awk '{print $0, "Fernando"}' input>output --> add a column named fernando (fernando all the way down the file)
-
-25. wc -l nameoffile --> count lines in a file
-
-26. awk '{if($9>=1.0)print;}' input> output --> choose rows above a given value in the 9th column
-
-27. grep 'gyr' file1 --> prints lines from a file that contains a pattern.
-
-28. head -n nameoffile --> returns the first lines of the file
-
-29.  tail -n nameoffile --> return the last lines of the file
+##### Many thanks to Dr. Fernando Baldi, Dr. Gota Morota, Dr. Sabrina Kluska, Dr. Daniela Lourenco, and so many others that shared their knowledge with me.
 
 
+### 1. Change comma separation to TAB
+ ```
+ sed -e 's/,/\t/g'  
+```
+### 2. Separate a file by columns
+```
+column -t filename   
+```
+### 3. Cut the first 10 columns of a file 
+```
+cut -d$'\t' -f 1-10 NAMEOFFILE.txt > NAMEOFFILE2.txt 
+```
+### 4. Makes the last line the header
+```
+sed '1h;1d;$!H;$!d;G' nameoffile 
+```
+### 5. remove ^M from files edited on Windows and uploaded to Linux.
+```
+sed -e "s/^M//" filename > newfilename 
+```
+__OBS__: To enter ^M, type CTRL-V, then CTRL-M. That is, hold down the CTRL key then press V and M in succession.
+
+### 6. Remove the first 5 characters from any line in a file
+```
+sed 's/^.....//'  input>output  
+```
+### 7. Remove last character from any line in a file
+```
+sed 's/.$//' 
+```
+### 8. Change space separation to TAB
+```
+sed 's/ /\t/g' input>output  
+```
+### 9.  Count columns
+``` 
+awk '{print NF}' input>output 
+```
+### 10. Join the header file with the data file, one under the other
+```
+cat HEADERCFILE FILEWITHNOHEADER > output 
+```
+### 11. Sort file by the 1st column
+```
+sort -k1 input > output 
+```
+### 12. Creating a new file with columns 2, 1 and 3 from another file
+```
+awk '{print $2,$1,$3}' input>output 
+```
+### 13. Join two files into a new file just by pasting one next to the other
+``` 
+paste input1 input2 > output 
+```
+### 14. Open a very large file on linux
+```
+less -S nameoffile 
+```
+### 15. Cut the first line of a file
+```
+sed 1d input > output 
+```
+### 16. Cut the first column of a file
+```
+cut -‐f1 -‐d" " input>output 
+```
+### 17. Cut the first column and create a new file from the second column to the last.
+```
+cut -d " " -f 2- input>output 
+```
+### 18. Take only the first 11 lines of a file
+```
+awk 'FNR>=1 && FNR<=11' input>output 
+```
+### 19. Remove header
+```
+echo "$(tail -n +2 input)" > output 
+```
+### 20. Run a command that will take a while to complete without stopping in a server
+```
+nohup ./command_that_will_take_forever_to_complete & 
+```
+### 21. Find out if two files have non-matching animals
+```grep -vwF -f id1.txt id2.txt > id3.txt 
+```
+- This file contains the animals that are not in common... that is, animals that have a phenotype.
+
+__OBS__: print strings that are not common when comparing two different files. the output will be all the different values/animals/sentences between the two files. In the example above, I wanted to know which animals had phenotype and not genotype (the number of animals genotyped was lower). I just wanted to work with phenotyped animals that had a genotype, that is, to exclude individuals without genomic information.
+
+### 22. Join files by column
+```
+join  -1 1 -2 1 <(sort -k1 input1) <(sort -k1 input2) > output 
+```
+### 23. Change file permissions
+```
+chmod u+x nameofexecutable 
+```
+### 24. Add a column named fernando (fernando all the way down the file)
+```
+awk '{print $0, "Fernando"}' input>output 
+```
+### 25. Count lines in a file
+``` 
+wc -l nameoffile 
+```
+### 26. Choose rows above a given value in the 9th column
+```
+awk '{if($9>=1.0)print;}' input> output 
+```
+### 27. Prints lines from a file that contains a pattern.
+```
+grep 'pattern' file1
+```
+### 28. Returns the first lines of the file
+```
+head -n nameoffile 
+```
+### 29. Returns the last lines of the file
+```
+tail -n nameoffile 
+```
+### 30. Join 2 files by identical animal IDs
+```
+join  -1 1 -2 1 <(sort -k1 id_GENO.txt) <(sort -k1 P120_Genotipados.txt) > P120_FINAL.txt
+```
+__OBS:__ id_GENO: is a file with IDs for genotyped animals. In this case, the output is a phenotype file for animals that have genotypes. 
+
+### 31. Change TAB to space separation
+```
+expand -t 1 filename > output
+```
+### 32. Replace NA for 0
+```
+sed 's~NA~0~g' pheno5.txt >pheno6.txt 
+```
+### 33. ZIP a directory
+```
+tar -zcvf archive.tar.gz directory/  
+```
+### 34. Copy a whole directory 
+```
+cp -r /work/course2022/week2/day10/ .
+```
+### 35. Append content at the end of the file
+```
+cat file3 >> output_file2
+```
+### 36. Merge files line by line with a space delimiter 
+```
+paste -d " " input1 input2 > output
+```
+### 37. Sorts a file in alphanumeric order (ex: sort -k 2,2)
+```
+sort -k startfield,endfield filename > output 
+```
+### 38. Sorts a file in numeric order
+```
+sort -nk startfield,endfield filename > output
+```
+### 39. Sorts a file in reverse numeric order
+```
+sort -nrk startfield,endfield filename > output 
+```
+### 40. Sorts based on column 1 then column 2
+```
+sort -k1,1 -k2,2 filename > output
+```
+### 41. Merge two files buy column 1 but suppress the joined output lines. Good for find who is not in one of the files
+```
+join -v1 phenotypes.txt pedigree.txt > output
+```
+### 42. Shows all lines that do not match the pattern
+```
+grep -v PATTERN filename 
+```
+### 43. Substitution of a pattern 
+```
+sed -e 's/UGA/SA/g' pedigree.txt > SA_pedigree.txt 
+```
+__OBS:__ replaces UGA with SA in the pedigree file.
+
+### 44. Change the pattern on a specific line 
+```
+sed -e '24s/UGA/SA/' pedigree.txt > SA_pedigree.txt 
+```
+__OBS:__ In this case, line 24.
+
+### 45. Remove a pattern from a file
+```
+sed -e '/pattern to match/d' file > output
+```
+### 46. Print column 1 and last column of a file
+```
+awk '{print $1,$NF}' filename>output 
+```
+### 47. Print all columns
+```
+awk '{print $0}' filename>output
+```
+### 48. Print column 1 based on occurrence in column 2
+```
+awk '{if ($2==2) print $1}' filename>output
+```
+### 49. Print columns 3 and 4 skipping the first 1000 lines
+```
+awk '{if (NR>1000) print $3, $4}' filename>output 
+```
+### 50. Print length of column 2 from line 1 (count how many SNPs we have)
+```
+awk '{if (NR==1) print length ($2)}' filename>output
+```
+### 51. Counts how many entries there will be for an animal
+```
+awk '{print $2}' filename |sort| uniq -c >output 
+```
+__Example:__ How many progenies an animal has. In this case, the sire was column 2.
 
