@@ -222,3 +222,34 @@ awk '{print $2}' filename |sort| uniq -c >output
 ```
 __Example:__ How many progenies an animal has. In this case, the sire was column 2.
 
+### 52. Check how many animals in a column has a certain genotype code
+
+In this code, reference allele is __A__.
+
+- Missing genotypes (coded as __5__):
+```
+awk '{print substr ($2, 7, 1)}' genot_pic.txt | awk '$1==5' | wc -l 
+```
+- AA (coded as __2__):
+```
+awk '{print substr ($2, 7, 1)}' genot_pic.txt | awk '$1==2' | wc -l  
+```
+- Aa (coded as __1__):
+```
+awk '{print substr ($2, 7, 1)}' genot_pic.txt | awk '$1==1' | wc -l  Aa 
+```
+- aa (coded as __0__):
+```
+awk '{print substr ($2, 7, 1)}' genot_pic.txt | awk '$1==0' | wc -l  
+```
+### 53. Calculate allele frequency
+```
+awk '{print substr ($2, 7, 1)}' genot_pic.txt | awk '{sum=sum+$1} END {print sum/(2*NR)}'
+```
+### 54. Copy a file from a server to your local direcoty
+```
+scp serveraddres:work/ads-guest37/.day12/pheno.dat /pathinyourlocaldirectory
+```
+
+```
+
