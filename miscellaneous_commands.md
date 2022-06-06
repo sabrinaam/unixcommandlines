@@ -7,11 +7,11 @@ Some commands might be repeated, I'm using this repository to store everything I
 
 ### 1. Change comma separation to TAB
  ```
- sed -e 's/,/\t/g'  
+ sed -e 's/,/\t/g'  input > output
 ```
 ### 2. Separate a file by columns
 ```
-column -t filename   
+column -t filename > output
 ```
 ### 3. Cut the first 10 columns of a file 
 ```
