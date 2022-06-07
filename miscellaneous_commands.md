@@ -214,7 +214,7 @@ awk '{if (NR>1000) print $3, $4}' filename>output
 ```
 ### 50. Print length of column 2 from line 1 (count how many SNPs we have)
 ```
-awk '{if (NR==1) print length ($2)}' filename>output
+awk '{if (NR==1) print length ($2)}' filename
 ```
 ### 51. Counts how many entries there will be for an animal
 ```
