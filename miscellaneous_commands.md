@@ -1,4 +1,4 @@
-## Miscellaneous commands I've been using since for file editing.
+## Miscellaneous commands I've been using for file editing.
 
 Some commands might be repeated, I'm using this repository to store everything I'm using and may use again in the future.
 
