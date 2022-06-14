@@ -88,7 +88,8 @@ echo "$(tail -n +2 input)" > output
 nohup ./command_that_will_take_forever_to_complete & 
 ```
 ### 21. Find out if two files have non-matching animals
-```grep -vwF -f id1.txt id2.txt > id3.txt 
+```
+grep -vwF -f id1.txt id2.txt > id3.txt 
 ```
 - This file contains the animals that are not in common... that is, animals that have a phenotype.
 
