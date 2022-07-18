@@ -251,6 +251,8 @@ awk '{print substr ($2, 7, 1)}' genot_pic.txt | awk '{sum=sum+$1} END {print sum
 ```
 scp serveraddres:work/ads-guest37/.day12/pheno.dat /pathinyourlocaldirectory
 ```
-
+### 55. Calculate the average of a column using awk
+```
+awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
 ```
 
