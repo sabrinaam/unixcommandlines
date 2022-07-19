@@ -255,4 +255,4 @@ scp serveraddres:work/ads-guest37/.day12/pheno.dat /pathinyourlocaldirectory
 ```
 awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
 ```
-
+- Note: In this case, the column I wanted the average was column 5, represented as $5.
