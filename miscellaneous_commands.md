@@ -257,8 +257,4 @@ awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
 ```
 - Note: In this case, the column I wanted the average was column 5, represented as $5.
 
-### Download a file from ARC
-```
- scp cascades1.arc.vt.edu/work/cascades/asabrina/folderyoureworking pathinlocaldirectory
- 
- ```
+
