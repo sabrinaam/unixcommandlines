@@ -257,4 +257,8 @@ awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
 ```
 - Note: In this case, the column I wanted the average was column 5, represented as $5.
 
+## 56. Print the header from a file in an output with the header displayed as columns
 
+```
+ head -n1 nameoffile | tr , '\n' > output
+ ```
