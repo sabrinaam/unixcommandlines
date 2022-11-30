@@ -262,3 +262,10 @@ awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
 ```
  head -n1 nameoffile | tr , '\n' > output
  ```
+ 
+ ## 57. Convert tab to spaces
+ 
+ ```
+ expand -t 1 input>output
+ ```
+ 
