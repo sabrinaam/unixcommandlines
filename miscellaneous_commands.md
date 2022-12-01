@@ -269,3 +269,8 @@ awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
  expand -t 1 input>output
  ```
  
+## 58. Send a file from yout Desktop to a server
+
+```
+scp -P 22 file  sabrina@server_number:~/ 
+```
