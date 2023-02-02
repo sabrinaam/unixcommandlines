@@ -274,3 +274,9 @@ awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
 ```
 scp -P 22 file  sabrina@server_number:~/ 
 ```
+
+## 59. Create a column with a constant number
+
+```
+awk -F '\t' -v OFS='\t' '{ $(NF+1) = NUMBERYOUWANT; print }' infile >outfile
+```
