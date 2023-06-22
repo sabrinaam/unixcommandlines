@@ -3,7 +3,7 @@
 Notes:
 - I've been using these commands for file editing and other miscellaneous tasks.
 
-- Some commands might be repeated, I'm using this repository to store everything I'm using and may use again in the future.
+- Some commands might be repeated. I'm using this repository to store everything I'm using and may use it again in the future.
 
 - ##### Many thanks to Dr. Fernando Baldi, Dr. Gota Morota, Dr. Sabrina Kluska, Dr. Daniela Lourenco, and so many others that shared their knowledge with me.
 
