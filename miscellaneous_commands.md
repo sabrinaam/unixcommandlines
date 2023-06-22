@@ -288,3 +288,8 @@ awk ‘NR>1’ solutions | sort -k1,1n -k2,2n -k3,3n > solutions.sorted
 
 ```
 
+## Check records from a column in a datafile + sort the values 
+
+```
+awk 'NR>1{print $6}' FILE | sort -u
+``
