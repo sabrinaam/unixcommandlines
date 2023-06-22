@@ -257,38 +257,38 @@ awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
 ```
 - Note: In this case, the column I wanted the average was column 5, represented as $5.
 
-## 56. Print the header from a file in output with the header displayed as columns
+### 56. Print the header from a file in output with the header displayed as columns
 
 ```
  head -n1 nameoffile | tr , '\n' > output
  ```
  
- ## 57. Convert tab to spaces
+ ### 57. Convert tab to spaces
  
  ```
  expand -t 1 input>output
  ```
  
-## 58. Send a file from your Desktop to a server
+### 58. Send a file from your Desktop to a server
 
 ```
 scp -P 22 file  sabrina@server_number:~/ 
 ```
 
-## 59. Create a column with a constant number
+### 59. Create a column with a constant number
 
 ```
 awk -F '\t' -v OFS='\t' '{ $(NF+1) = NUMBERYOUWANT; print }' infile >outfile
 ```
 
-## 60. For BLUPF90 solutions file: Skip the header and then sort, first by trait, then by effect, then by level
+### 60. For BLUPF90 solutions file: Skip the header and then sort, first by trait, then by effect, then by level
 
 ```
 awk ‘NR>1’ solutions | sort -k1,1n -k2,2n -k3,3n > solutions.sorted 
 
 ```
 
-## 61. Check records from a column in a datafile + sort the values 
+### 61. Check records from a column in a datafile + sort the values 
 
 ```
 awk 'NR>1{print $COLUMN_NUMBER}' FILE | sort -u
