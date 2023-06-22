@@ -1,2 +1,3 @@
-# unixcommandlines
-Compilation of several Unix Commands for animal breeders file editing and more.
+# Unixcommandlines
+A compilation of several Unix Commands for animal breeders. File editing and more.
+This repository is constantly updated.
