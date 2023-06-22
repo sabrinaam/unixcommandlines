@@ -281,14 +281,14 @@ scp -P 22 file  sabrina@server_number:~/
 awk -F '\t' -v OFS='\t' '{ $(NF+1) = NUMBERYOUWANT; print }' infile >outfile
 ```
 
-## For BLUPF90 solutions file: Skip the header and then sort, first by trait, then by effect, then by level
+## 60. For BLUPF90 solutions file: Skip the header and then sort, first by trait, then by effect, then by level
 
 ```
 awk ‘NR>1’ solutions | sort -k1,1n -k2,2n -k3,3n > solutions.sorted 
 
 ```
 
-## Check records from a column in a datafile + sort the values 
+## 61. Check records from a column in a datafile + sort the values 
 
 ```
 awk 'NR>1{print $6}' FILE | sort -u
