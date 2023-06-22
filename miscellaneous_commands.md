@@ -31,7 +31,7 @@ __OBS__: To enter ^M, type CTRL-V, then CTRL-M. That is, hold down the CTRL key 
 ```
 sed 's/^.....//'  input>output  
 ```
-### 7. Remove last character from any line in a file
+### 7. Remove the last character from any line in a file
 ```
 sed 's/.$//' 
 ```
@@ -47,11 +47,11 @@ awk '{print NF}' input>output
 ```
 cat HEADERCFILE FILEWITHNOHEADER > output 
 ```
-### 11. Sort file by the 1st column
+### 11. Sort the file by the 1st column
 ```
 sort -k1 input > output 
 ```
-### 12. Creating a new file with columns 2, 1 and 3 from another file
+### 12. Creating a new file with columns 2, 1, and 3 from another file
 ```
 awk '{print $2,$1,$3}' input>output 
 ```
@@ -59,7 +59,7 @@ awk '{print $2,$1,$3}' input>output
 ``` 
 paste input1 input2 > output 
 ```
-### 14. Open a very large file on linux
+### 14. Open a very large file on Linux
 ```
 less -S nameoffile 
 ```
@@ -103,7 +103,7 @@ join  -1 1 -2 1 <(sort -k1 input1) <(sort -k1 input2) > output
 ```
 chmod u+x nameofexecutable 
 ```
-### 24. Add a column named fernando (fernando all the way down the file)
+### 24. Add a column named Fernando (Fernando all the way down the file)
 ```
 awk '{print $0, "Fernando"}' input>output 
 ```
@@ -173,7 +173,7 @@ sort -nrk startfield,endfield filename > output
 ```
 sort -k1,1 -k2,2 filename > output
 ```
-### 41. Merge two files buy column 1 but suppress the joined output lines. Good for find who is not in one of the files
+### 41. Merge two files by column 1 but suppress the joined output lines. Good for finding who is not in one of the files
 ```
 join -v1 phenotypes.txt pedigree.txt > output
 ```
@@ -197,7 +197,7 @@ __OBS:__ In this case, line 24.
 ```
 sed -e '/pattern to match/d' file > output
 ```
-### 46. Print column 1 and last column of a file
+### 46. Print column 1 and the last column of a file
 ```
 awk '{print $1,$NF}' filename>output 
 ```
@@ -205,7 +205,7 @@ awk '{print $1,$NF}' filename>output
 ```
 awk '{print $0}' filename>output
 ```
-### 48. Print column 1 based on occurrence in column 2
+### 48. Print column 1 based on the occurrence in column 2
 ```
 awk '{if ($2==2) print $1}' filename>output
 ```
@@ -213,7 +213,7 @@ awk '{if ($2==2) print $1}' filename>output
 ```
 awk '{if (NR>1000) print $3, $4}' filename>output 
 ```
-### 50. Print length of column 2 from line 1 (count how many SNPs we have)
+### 50. Print the length of column 2 from line 1 (count how many SNPs we have)
 ```
 awk '{if (NR==1) print length ($2)}' filename
 ```
@@ -223,9 +223,9 @@ awk '{print $2}' filename |sort| uniq -c >output
 ```
 __Example:__ How many progenies an animal has. In this case, the sire was column 2.
 
-### 52. Check how many animals in a column has a certain genotype code
+### 52. Check how many animals in a column have a certain genotype code
 
-In this code, reference allele is __A__.
+In this code, the reference allele is __A__.
 
 - Missing genotypes (coded as __5__):
 ```
@@ -247,7 +247,7 @@ awk '{print substr ($2, 7, 1)}' genot_pic.txt | awk '$1==0' | wc -l
 ```
 awk '{print substr ($2, 7, 1)}' genot_pic.txt | awk '{sum=sum+$1} END {print sum/(2*NR)}'
 ```
-### 54. Copy a file from a server to your local direcoty
+### 54. Copy a file from a server to your local directory
 ```
 scp serveraddres:work/ads-guest37/.day12/pheno.dat /pathinyourlocaldirectory
 ```
@@ -257,7 +257,7 @@ awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
 ```
 - Note: In this case, the column I wanted the average was column 5, represented as $5.
 
-## 56. Print the header from a file in an output with the header displayed as columns
+## 56. Print the header from a file in output with the header displayed as columns
 
 ```
  head -n1 nameoffile | tr , '\n' > output
@@ -269,7 +269,7 @@ awk '{sum+=$5} END { print "Average = ",sum/NR}' nameoffile
  expand -t 1 input>output
  ```
  
-## 58. Send a file from yout Desktop to a server
+## 58. Send a file from your Desktop to a server
 
 ```
 scp -P 22 file  sabrina@server_number:~/ 
