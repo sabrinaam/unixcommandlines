@@ -307,5 +307,10 @@ find directory/path/here -type f -printf '%TY-%Tm-%Td %TH:%TM %p\n' | awk '$2 ==
 
 ```
 sed 's/^[^0-9]*//' snp_file.dat > snp_cleaned.dat
+```
 
+### 64. Count SNPs (each character is counted as it was a column)
+
+```
+awk '{print length($0); exit}' file
 ```
