@@ -302,3 +302,10 @@ awk 'NR>1{print $COLUMN_NUMBER}' FILE | sort -u
 ```
 find directory/path/here -type f -printf '%TY-%Tm-%Td %TH:%TM %p\n' | awk '$2 == "12:14" {print $3}' | xargs rm
 ```
+
+### 63. Remove all non-numeric characters from a file (ex. ID)
+
+```
+sed 's/^[^0-9]*//' snp_file.dat > snp_cleaned.dat
+
+```
