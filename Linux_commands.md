@@ -314,3 +314,10 @@ sed 's/^[^0-9]*//' snp_file.dat > snp_cleaned.dat
 ```
 awk '{print length($0); exit}' file
 ```
+
+### 65. Remove duplicated IDs
+
+```
+awk '!seen[$1]++' input > output
+```
+
