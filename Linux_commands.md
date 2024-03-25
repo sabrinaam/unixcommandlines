@@ -86,6 +86,13 @@ awk 'FNR>=1 && FNR<=11' input>output
 ```
 echo "$(tail -n +2 input)" > output 
 ```
+
+or
+
+```
+sed -i '1d' input
+```
+
 ### 20. Run a command that will take a while to complete without stopping in a server
 ```
 nohup ./command_that_will_take_forever_to_complete & 
