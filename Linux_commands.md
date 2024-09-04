@@ -328,3 +328,11 @@ awk '{print length($0); exit}' file
 awk '!seen[$1]++' input > output
 ```
 
+### 66. Make sure your file has fixed fixed-width
+
+- Ex: You want the second field (the genotypes) to start at the same position (e.g., column 10 or a specific width).
+
+```
+awk '{printf "%-10s%s\n", $1, $2}' input_file.txt > fixed_format_file.txt
+```
+
