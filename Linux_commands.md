@@ -336,3 +336,10 @@ awk '!seen[$1]++' input > output
 awk '{printf "%-10s%s\n", $1, $2}' input_file.txt > fixed_format_file.txt
 ```
 
+### 67. Clean file based on entries in a column
+
+- Ex: When cleaning an SNP map file, keep only the information from CHR1-30.
+
+```
+awk '$2 >= 1 && $2 <= 30' input > output
+```
