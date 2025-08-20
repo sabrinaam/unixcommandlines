@@ -343,3 +343,11 @@ awk '{printf "%-10s%s\n", $1, $2}' input_file.txt > fixed_format_file.txt
 ```
 awk '$2 >= 1 && $2 <= 30' input > output
 ```
+
+### 68. Remove duplicated genotypes from a file
+
+- You need to indicate which rows are duplicated.
+```
+awk '{if (NR != 1stduplicate && NR != 2nduplicate) print $0}' genotype_file > genotype_file_not_duplicated
+
+```
