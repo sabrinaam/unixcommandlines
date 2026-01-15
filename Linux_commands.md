@@ -351,3 +351,10 @@ awk '$2 >= 1 && $2 <= 30' input > output
 awk '{if (NR != 1stduplicate && NR != 2nduplicate) print $0}' genotype_file > genotype_file_not_duplicated
 
 ```
+
+### 69. Remove ".00" 
+
+```
+sed 's/\.00//g' input > output
+
+```
