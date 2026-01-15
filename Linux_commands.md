@@ -349,12 +349,21 @@ awk '$2 >= 1 && $2 <= 30' input > output
 - You need to indicate which rows are duplicated.
 ```
 awk '{if (NR != 1stduplicate && NR != 2nduplicate) print $0}' genotype_file > genotype_file_not_duplicated
-
 ```
 
 ### 69. Remove ".00" 
 
 ```
 sed 's/\.00//g' input > output
+```
+
+### 79. Concatenate genotypes with no spaces
+
+```
+awk '{
+  printf "%s ", $1
+  for (i=2; i<=NF; i++) printf "%s", $i
+  printf "\n"
+}' Genotype.txt > Genotype_2.txt
 
 ```
