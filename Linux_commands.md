@@ -357,7 +357,7 @@ awk '{if (NR != 1stduplicate && NR != 2nduplicate) print $0}' genotype_file > ge
 sed 's/\.00//g' input > output
 ```
 
-### 79. Concatenate genotypes with no spaces
+### 70. Concatenate genotypes with no spaces
 
 ```
 awk '{
@@ -366,4 +366,9 @@ awk '{
   printf "\n"
 }' Genotype.txt > Genotype_2.txt
 
+```
+### 71. Replace "." with 5
+
+```
+sed 's/\b\.\b/5/g' input > output
 ```
